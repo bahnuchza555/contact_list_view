@@ -15,7 +15,6 @@ class APIService {
 
   Future<dynamic> getContactList(int size) async {
     final serviceRes = await dioClient.get('https://randomuser.me/api?results=$size');
-    print(serviceRes.statusCode);
     if (serviceRes.statusCode == 200) {
       return serviceRes.data;
     } else {
